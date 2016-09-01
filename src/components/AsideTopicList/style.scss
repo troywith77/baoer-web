@@ -1,0 +1,26 @@
+.listItem {
+	display: block;
+	width: 90%;
+	height: 44px;
+	line-height: 44px;
+	padding: 0 10px;
+}
+
+.activeItem {
+	position: relative;
+	background: #fff;
+	border-radius: 5px;
+	padding: 0 10px;
+	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.1);
+
+	&:after {
+		position: absolute;
+		top: 18px;
+		left: -18px;
+		content: '';
+		width: 8px;
+		height: 8px;
+		background: #15cc87;
+		border-radius: 50%;
+	}
+}

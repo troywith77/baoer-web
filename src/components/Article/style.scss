@@ -1,0 +1,35 @@
+.ArticleContainer {
+	width: 1100px;
+	margin: 0 auto;
+	padding: 80px 0 30px;
+	font-size: 14px;
+}
+
+.ArticleInner {
+	width: 640px;
+	margin-left: 235px;
+	padding: 20px;
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+	background: #fff;
+	font-size: 16px;
+	p {
+		line-height: 1.5;
+		margin: 10px 0;
+	}
+	img {
+		width: 100%;
+	}
+	.title {
+		margin-bottom: 25px;
+	}
+	.source {
+		display: block;
+		color: #999;
+		font-size: 12px;
+	}
+	.articleFooter {
+		margin: 30px 0 20px;
+		font-size: 12px;
+		color: #999;
+	}
+}

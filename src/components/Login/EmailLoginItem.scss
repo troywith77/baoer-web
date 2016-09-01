@@ -1,0 +1,44 @@
+.emailLogin {
+	input {
+		display: block;
+		width: 100%;
+		height: 45px;
+		border: none;
+		outline: none;
+		border-bottom: 1px solid #fff;
+		background: transparent;
+		font-size: 14px;
+		color: #fff;
+	}
+	.lostPassword {
+		text-align: right;
+		margin-top: 10px;
+		a {
+			color: #fff;
+			font-size: 12px;
+			margin-top: 10px;
+		}
+	}
+}
+
+.emailLoginButton {
+	display: block;
+	margin: 50px auto;
+	background-color: transparent;
+	font-size: 20px;
+	color: #FFF;
+	cursor: pointer;
+	&:hover {
+		color: #ddd;
+	}
+}
+
+.back {
+	text-align: right;
+	margin-top: 10px;
+	a {
+		color: #fff;
+		font-size: 12px;
+		margin-top: 10px;
+	}
+}

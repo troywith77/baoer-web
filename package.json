@@ -1,0 +1,30 @@
+{
+  "name": "react-app",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "node-sass": "^3.8.0",
+    "react-scripts": "0.1.0",
+    "sass-loader": "^4.0.0",
+    "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "axios": "^0.14.0",
+    "classnames": "^2.2.5",
+    "fetch": "^1.1.0",
+    "react": "^15.2.1",
+    "react-cookie": "^0.4.8",
+    "react-dom": "^15.2.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.7.0",
+    "react-tap-event-plugin": "^1.0.0",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0",
+    "webpack-dev-server": "^1.15.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  }
+}

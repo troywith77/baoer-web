@@ -1,0 +1,43 @@
+:global {
+  // @import 'base';
+  // @import '~normalize.css/normalize';
+
+  // Some best-practice CSS that's useful for most apps
+  // Just remove them if they're not what you want
+  html {
+    box-sizing: border-box;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft YaHei",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #333;
+  }
+
+  html,
+  body,
+  #root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #f4f4f4;
+  }
+
+  body {
+    overflow-y: scroll;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  button {
+    border: none;
+    outline: none;
+  }
+}
