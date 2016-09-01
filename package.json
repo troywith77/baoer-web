@@ -1,6 +1,6 @@
 {
-  "name": "react-app",
-  "version": "0.0.1",
+  "name": "baoer-web",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "node-sass": "^3.8.0",
