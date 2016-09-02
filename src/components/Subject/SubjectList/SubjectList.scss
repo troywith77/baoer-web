@@ -24,6 +24,9 @@
 		margin: 10px 0 30px;
 	}
 	.upvote {
+		display: flex;
+		align-items: flex-start;
+		font-weight: bold;
 		path {
 			fill: #ddd;
 			transition: 0.2s;

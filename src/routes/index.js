@@ -9,12 +9,12 @@ import MainContainer from 'containers/MainContainer'
 
 const configureRoutes = store => {
 	const chechAuth = (nextState, replace) => {
-		if(!store.getState().Auth.Token) {
+		if(!store.getState().Auth.isAuthenticated) {
 			replace({ pathname: '/login' })
 		}
 	}
 	const chechLogin = (nextState, replace) => {
-		if(store.getState().Auth.Token) {
+		if(store.getState().Auth.isAuthenticated) {
 			replace({ pathname: '/' })
 		}
 	}

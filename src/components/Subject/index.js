@@ -14,8 +14,8 @@ class Subject extends Component {
 	componentDidMount() {
 		const { actions, Subject } = this.props
 		const subjectId = this.props.params.subjectId || null
+		if(Subject.currentSubject.Id) return
 		if(subjectId) {
-			if(Subject.currentSubject.Id) return
 			actions.fetchSingleSubject(subjectId)
 			actions.fetchSubjectArticles(subjectId)
 		} else {
