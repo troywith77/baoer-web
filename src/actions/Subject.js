@@ -1,26 +1,21 @@
 import API from 'api'
 import axios from 'axios'
 
-export const fetchSubjectsList = () => {
+export const fetchAsideSubjectsList = () => {
 	return dispatch => {
 		return fetch(API.homePageRec.list)
 			.then(res => res.json())
 			.then(res => {
-				dispatch(RECEIVE_SUBJECTS(res))
+				dispatch(RECEIVE_ASIDE_SUBJECTS(res))
 				return res.Section4
 			})
 	}
 }
 
-export const RECEIVE_SUBJECTS = (payload) => {
-	return{
-		type: 'RECEIVE_SUBJECTS',
-		payload
-	}
-}
-
 export const fetchSingleSubject = (id) => {
 	return (dispatch, getStore) => {
+		dispatch(REQUEST_SUBJECT())
+
 		return fetch(API.topic.single + id, {
 			method: 'get',
 			headers: {
@@ -33,11 +28,6 @@ export const fetchSingleSubject = (id) => {
 			})
 	}
 }
-
-export const RECEIVE_CURRENT_SUBJECT = (payload) => ({
-	type: 'RECEIVE_CURRENT_SUBJECT',
-	payload
-})
 
 export const fetchSubjectArticles = (id) => {
 	return (dispatch, getStore) => {
@@ -54,20 +44,31 @@ export const fetchSubjectArticles = (id) => {
 		})
 		.then(res => {
 			if(id == getStore().Subject.currentSubject.Id) {
-				dispatch(RECEIVE_SUBJECT_LIST(res.data.Messages))
+				dispatch(RECEIVE_ARTICLES_LIST(res.data.Messages))
 			}
 		})
 	}
 }
 
-export const RECEIVE_SUBJECT_LIST = (payload) => ({
-	type: 'RECEIVE_SUBJECT_LIST',
+export const RECEIVE_ASIDE_SUBJECTS = (payload) => {
+	return{
+		type: 'RECEIVE_ASIDE_SUBJECTS',
+		payload
+	}
+}
+
+export const RECEIVE_CURRENT_SUBJECT = (payload) => ({
+	type: 'RECEIVE_CURRENT_SUBJECT',
 	payload
 })
 
-export const CHANGE_SUBJECT = (payload) => ({
-	type: 'CHANGE_SUBJECT',
+export const RECEIVE_ARTICLES_LIST = (payload) => ({
+	type: 'RECEIVE_ARTICLES_LIST',
 	payload
+})
+
+export const REQUEST_SUBJECT = () => ({
+	type: 'REQUEST_SUBJECT'
 })
 
 export const SELECT_ARTICLE = (payload) => ({

@@ -1,9 +1,16 @@
 .listItem {
-	display: block;
+	display: flex;
+	align-items: center;
 	width: 90%;
 	height: 44px;
 	line-height: 44px;
 	padding: 0 10px;
+	img {
+		width: 24px;
+		height: 24px;
+		margin-right: 10px;
+		border-radius: 3px;
+	}
 }
 
 .activeItem {

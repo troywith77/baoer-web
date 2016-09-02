@@ -4,23 +4,8 @@ import Header from 'components/Header'
 import AsideTopicList from 'components/AsideTopicList'
 
 class Main extends Component {
-	fetchData(obj) {
-		const subjectId = obj.params.subjectId || null
-		obj.actions.fetchSubjectsList().then(res => {
-			!subjectId && obj.actions.fetchSingleSubject(res[0].Id)
-			!subjectId && obj.actions.fetchSubjectArticles(res[0].Id)
-		})
-		subjectId && obj.actions.fetchSingleSubject(subjectId)
-		subjectId && obj.actions.fetchSubjectArticles(subjectId)
-	}
-	componentWillReceiveProps(nextProp) {
-		if(this.props.params.subjectId !== nextProp.params.subjectId) {
-			nextProp.actions.CHANGE_SUBJECT()
-			this.fetchData(nextProp)
-		}
-	}
 	componentDidMount() {
-		this.fetchData(this.props)
+		this.props.actions.fetchAsideSubjectsList()
 	}
 	render() {
 		return (
@@ -33,6 +18,7 @@ class Main extends Component {
 							activeKey={this.props.params.subjectId}
 						/>
 					</aside>
+
 					{this.props.children}
 				</div>
 			</div>

@@ -6,7 +6,7 @@ const initialState = {
 
 const Subject = (state = initialState, action) => {
 	switch(action.type) {
-		case 'RECEIVE_SUBJECTS':
+		case 'RECEIVE_ASIDE_SUBJECTS':
 			return Object.assign({}, state, {
 				asideList: action.payload.Section4
 			})
@@ -16,12 +16,12 @@ const Subject = (state = initialState, action) => {
 				currentSubject: action.payload
 			})
 			break
-		case 'RECEIVE_SUBJECT_LIST':
+		case 'RECEIVE_ARTICLES_LIST':
 			return Object.assign({}, state, {
 				subjectList: action.payload
 			})
 			break
-		case 'CHANGE_SUBJECT':
+		case 'REQUEST_SUBJECT':
 			return Object.assign({}, state, {
 				currentSubject: {},
 				subjectList: []

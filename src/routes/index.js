@@ -13,6 +13,11 @@ const configureRoutes = store => {
 			replace({ pathname: '/login' })
 		}
 	}
+	const chechLogin = (nextState, replace) => {
+		if(store.getState().Auth.Token) {
+			replace({ pathname: '/' })
+		}
+	}
 	return (
 		<Router history={browserHistory}>
 			<Route path='/' component={MainContainer} onEnter={chechAuth}>
@@ -20,7 +25,7 @@ const configureRoutes = store => {
 				<Route path='/subject/:subjectId' component={SubjectContainer} />
 				<Route path='/article/:articleId' component={ArticleContainer} />
 			</Route>
-			<Route path='/login' component={LoginContainer} />
+			<Route path='/login' component={LoginContainer} onEnter={chechLogin} />
 		</Router>
 	)
 }

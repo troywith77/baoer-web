@@ -24,7 +24,8 @@ class AsideTopicList extends Component {
 					className={active}
 					onClick={e => this.setState({activeKey: index})}
 				>
-					{item.Title}
+					<img src={item.Image} />
+					<span>{item.Title}</span>
 				</Link>
 			)
 		})
