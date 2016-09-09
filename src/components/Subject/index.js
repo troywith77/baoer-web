@@ -4,6 +4,10 @@ import SubjectHeader from './SubjectHeader/'
 import SubjectList from './SubjectList/'
 
 class Subject extends Component {
+	constructor(props) {
+		super(props)
+		this.request = null
+	}
 	componentWillReceiveProps(nextProps) {
 		const subjectId = nextProps.params.subjectId || null
 		if(this.props.params.subjectId != subjectId) {
@@ -19,6 +23,10 @@ class Subject extends Component {
 			actions.fetchSingleSubject(subjectId)
 			actions.fetchSubjectArticles(subjectId)
 		} else {
+			if(Subject.asideList.length) {
+				actions.fetchSingleSubject(Subject.asideList[0].Id)
+				actions.fetchSubjectArticles(Subject.asideList[0].Id)
+			}
 			actions.fetchAsideSubjectsList().then(res => {
 				actions.fetchSingleSubject(res[0].Id)
 				actions.fetchSubjectArticles(res[0].Id)

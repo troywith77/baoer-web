@@ -39,7 +39,7 @@ class Header extends Component {
           <div className={classes.info}>
             <div className={classes.profile} onClick={e => this.setState({showMenu: !this.state.showMenu})}>
               <div className={classes.innerMenu} style={{display: this.state.showMenu ? 'block' : 'none'}}>
-                <Link to=''>Profile</Link>
+                <Link to='/'>Profile</Link>
                 <Link to='/login' onClick={e => this.props.actions.logout()}>Log out</Link>
               </div>
             </div>

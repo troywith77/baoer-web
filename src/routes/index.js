@@ -23,7 +23,7 @@ const configureRoutes = store => {
 			<Route path='/' component={MainContainer} onEnter={chechAuth}>
 				<IndexRoute component={SubjectContainer} />
 				<Route path='/subject/:subjectId' component={SubjectContainer} />
-				<Route path='/article/:articleId' component={ArticleContainer} />
+				<Route path='/:subjectId/:articleId' component={ArticleContainer} />
 			</Route>
 			<Route path='/login' component={LoginContainer} onEnter={chechLogin} />
 		</Router>

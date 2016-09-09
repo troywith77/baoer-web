@@ -4,7 +4,6 @@ import configureStore from 'store';
 import { Provider } from 'react-redux';
 import configureRoutes from 'routes'
 import 'styles/base.scss'
-import { LOGIN_SUCCSED } from 'actions/Auth'
 
 const store = configureStore()
 

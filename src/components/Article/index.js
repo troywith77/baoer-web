@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import classes from './style.scss'
 import AsideTopicList from 'components/AsideTopicList'
+import AsideTopicSummary from 'components/AsideTopicSummary'
 import { formatTime } from 'utils'
 
 class Article extends Component {
@@ -27,10 +28,15 @@ class Article extends Component {
 							{Article.selectedArticle.Source && <small className={classes.source}>{'@' + Article.selectedArticle.Source}</small>}
 						</p>
 					</header>
-					<p className={classes.title}>{Article.selectedArticle.Title}</p>
+					<h3 className={classes.title}>{Article.selectedArticle.Title}</h3>
 					<p dangerouslySetInnerHTML={{__html: Article.selectedArticle.Content}}></p>
 					{ Article.selectedArticle.CreatedAt && <footer className={classes.articleFooter}>{formatTime(Article.selectedArticle.CreatedAt * 1000, '-')}</footer>}
 				</div>
+				<aside className={classes.asideTopic}>
+					<AsideTopicSummary
+						subject={Article.selectedSubject}
+					/>
+				</aside>
 			</div>
 		)
 	}

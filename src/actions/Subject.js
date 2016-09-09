@@ -14,7 +14,7 @@ export const fetchAsideSubjectsList = () => {
 
 export const fetchSingleSubject = (id) => {
 	return (dispatch, getStore) => {
-		dispatch(REQUEST_SUBJECT())
+		dispatch(REQUEST_SUBJECT(id))
 
 		return fetch(API.topic.single + id, {
 			method: 'get',
@@ -24,7 +24,9 @@ export const fetchSingleSubject = (id) => {
 		})
 			.then(res => res.json())
 			.then(res => {
-				dispatch(RECEIVE_CURRENT_SUBJECT(res))
+				if(id == getStore().Subject.currentSubject.Id) {
+					dispatch(RECEIVE_CURRENT_SUBJECT(res))
+				}
 			})
 	}
 }
@@ -37,7 +39,7 @@ export const fetchSubjectArticles = (id) => {
 				'X-Appgo-Token': getStore().Auth.Token
 			},
 			params: {
-				limit: 10,
+				limit: 20,
 				page: 1,
 				subjectid: id
 			}
@@ -47,6 +49,13 @@ export const fetchSubjectArticles = (id) => {
 				dispatch(RECEIVE_ARTICLES_LIST(res.data.Messages))
 			}
 		})
+	}
+}
+
+export const selectSingleArticle = (payload) => {
+	return (dispatch, getStore) => {
+		dispatch(SELECT_ARTICLE_SUBJECT(getStore().Subject.currentSubject))
+		dispatch(SELECT_ARTICLE(payload))
 	}
 }
 
@@ -67,11 +76,17 @@ export const RECEIVE_ARTICLES_LIST = (payload) => ({
 	payload
 })
 
-export const REQUEST_SUBJECT = () => ({
-	type: 'REQUEST_SUBJECT'
+export const REQUEST_SUBJECT = (payload) => ({
+	type: 'REQUEST_SUBJECT',
+	payload
 })
 
 export const SELECT_ARTICLE = (payload) => ({
 	type: 'SELECT_ARTICLE',
+	payload
+})
+
+export const SELECT_ARTICLE_SUBJECT = (payload) => ({
+	type: 'SELECT_ARTICLE_SUBJECT',
 	payload
 })

@@ -1,5 +1,6 @@
 const initialState = {
-	selectedArticle: {}
+	selectedArticle: {},
+	selectedSubject: {}
 }
 
 const Subject = (state = initialState, action) => {
@@ -15,9 +16,14 @@ const Subject = (state = initialState, action) => {
 			})
 			break
 		case 'RECEIVE_ARTICLE':
-			console.log(action.payload)
 			return Object.assign({}, state, {
-				selectedArticle: action.payload
+				selectedArticle: action.payload,
+				loadingArticle: false
+			})
+			break
+		case 'SELECT_ARTICLE_SUBJECT':
+			return Object.assign({}, state, {
+				selectedSubject: action.payload
 			})
 			break
 		default:

@@ -23,7 +23,7 @@ const Subject = (state = initialState, action) => {
 			break
 		case 'REQUEST_SUBJECT':
 			return Object.assign({}, state, {
-				currentSubject: {},
+				currentSubject: {Id: action.payload},
 				subjectList: []
 			})
 			break

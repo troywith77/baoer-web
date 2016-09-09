@@ -1,0 +1,22 @@
+.summaryContainer {
+	position: fixed;
+	padding-left: 25px;
+
+	.image {
+		width: 128px;
+		height: 128px;
+		border-radius: 25px;
+	}
+
+	.title {
+    font-size: 18px;
+    margin: 15px 0 10px;
+	}
+
+	.follow {
+		color: #999;
+		span {
+			margin-left: 5px;
+		}
+	}
+}

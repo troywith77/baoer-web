@@ -6,7 +6,7 @@ const SubjectHeader = ({
 }) => (
 	<section>
 		{
-			subject.Id &&
+			subject.Title &&
 			<header
 				style={{backgroundImage: `url(${subject.Image})`}}
 				className={classes.listHeader}

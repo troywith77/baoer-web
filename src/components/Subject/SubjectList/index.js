@@ -8,7 +8,7 @@ class SubjectList extends Component {
 		const { list, subject } = this.props
 		const items = list.map((item, index) => {
 			const createdAt = formatTimeWithSymbol(new Date(item.CreatedAt * 1000), '-')
-			const link = item.Style === 2 ? `/article/${item.Id}` : item.OriginalUrl
+			const link = item.Style === 2 ? `/${subject.Id}/${item.Id}` : item.OriginalUrl
 			const inner = (
 				<div>
 					<p className={classes.source}>{item.Source} <small>{createdAt}</small></p>
@@ -28,7 +28,7 @@ class SubjectList extends Component {
 				<li
 					key={index}
 				  className={classes.subjectListItem}
-				  onClick={e => this.props.SELECT_ARTICLE(item)}
+				  onClick={e => this.props.selectSingleArticle(item)}
 				>
 					{item.Style === 2 ?
 						<Link className={classes.link} to={link}>
